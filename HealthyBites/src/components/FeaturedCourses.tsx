@@ -1,50 +1,39 @@
 import Link from 'next/link'; // Import Link for routing
 import courseData from '../data/music_courses.json'; // Assuming courseData is used elsewhere
-
-interface Course{
-    id: number,
-    title: string,
-    slug: string,
-    description: string,
-    price: number,
-    instructor: string,
-    isFeatured: boolean,
-}
-
-
+import FeaturedSection_bg from '@/assets/FeaturedSection.png'; // Import the image
 
 function FeaturedCourses() {
-    courseData.courses.filter(course=> course.isFeatured)
-
+  // Filter for featured courses
+  const featuredCourses = courseData.courses.filter(course => course.isFeatured);
 
   return (
-    <div className='py-12 bg-gray-900'>
+    <div
+      className="relative" // Position the container to allow absolute positioning
+      style={{
+        padding: '3rem 0', // Equivalent to `py-12`
+        backgroundColor: '#1a202c', // Fallback background color
+      }}
+    >
+      {/* Background image with opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${FeaturedSection_bg.src})`,
+          opacity: 0.7, // Adjust the opacity here
+        }}
+      />
+      
       {/* Section Title */}
-      <div>
-        <div className="text-center">
-          <h2 className='text-base text-teal-600 font-semibold tracking-wide uppercase'>
-            FEATURED CUISINES
-          </h2>
-          <p className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl'>
+      <div className="relative z-10 text-center p-10 z-10">
+        <h2 className="text-base text-teal-600 text-xl font-semibold tracking-wide uppercase">
+          FEATURED CUISINES
+        </h2>
+        <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
           Get ready to explore our delicious range of dishes
-          </p>
-        </div>
+        </p>
       </div>
 
-      {/* Link to All Courses */}
-      <div className="mt-10 text-center">
-        <Link
-          href="/courses"
-          className="px-4 py-2 rounded border border-neutral-600 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200"
-        >
-          View All Cusines
-        </Link>
-      </div>
-      
-      {/* Placeholder Section */}
-      <div className="text-center mt-20 text-white">
-      Get ready to explore our delicious range of
-      </div>
+
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // Import the Inter font
 import "./globals.css";
 import Navbar from "@/components/NavBar";
+import { BackgroundBoxesDemo } from "@/components/BackgroundBoxesDemo";
 import Head from "next/head"; // Import Head for adding metadata
 
 const inter = Inter({ subsets: ["latin"] }); // Initialize the Inter font
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         {children}
+        <BackgroundBoxesDemo/>
       </body>
     </html>
   );

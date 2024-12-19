@@ -3,6 +3,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { Button } from "./ui/moving-border";
 
 
+
 function HeroSection() {
   return (
     <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
@@ -18,13 +19,13 @@ function HeroSection() {
         <p className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto">
           come with family & feel the joy of mouthwatering food
         </p>
-        <div className="mt-4">
-          <Link href="/courses" passHref>
+        <div className="mt-14">
+          <Link href="/cuisines" passHref>
             <Button
               borderRadius="1.75rem"
               className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
             >
-              Explore Our Cuisines
+             Explore Our Menu
             </Button>
           </Link>
         </div>

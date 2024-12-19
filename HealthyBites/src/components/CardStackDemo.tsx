@@ -1,15 +1,26 @@
 "use client";
+
 import { CardStack } from "./ui/card-stack";
 import { cn } from "@/lib/utils";
+import { FlipWordsDemo } from "./FlipWordsDemo";
+
 export function CardStackDemo() {
   return (
-    <div className="h-[40rem] flex items-center justify-end w-full">
-      <CardStack items={CARDS} />
+    <div className="h-[40rem] flex items-center w-full px-6">
+      {/* Feedback text on the left */}
+      <div className="w-1/2 ml-32 text-left space-y-4">
+        <FlipWordsDemo/>
+      </div>
+
+      {/* Card Stack on the right */}
+      <div className="w-1/2 flex justify-end">
+        <CardStack items={CARDS} />
+      </div>
     </div>
   );
 }
 
-// Small utility to highlight the content of specific section of a testimonial content
+// Highlight component remains the same
 export const Highlight = ({
   children,
   className,
