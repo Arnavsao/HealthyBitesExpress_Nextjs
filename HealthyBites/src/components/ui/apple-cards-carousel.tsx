@@ -17,7 +17,7 @@ import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/components/ui/hooks/use-outside-click";
 
 interface CarouselProps {
-  items: JSX.Element[];
+  // items: JSX.Element[];
   initialScroll?: number;
 }
 
@@ -183,7 +183,7 @@ export const Card = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  useOutsideClick(containerRef, () => handleClose());
+  // useOutsideClick(containerRef, () => handleClose());
 
   const handleOpen = () => {
     setOpen(true);
